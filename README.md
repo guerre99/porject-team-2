@@ -1,4 +1,4 @@
-# TEAM 2 - Shortly
+# TEAM LOS ESTROPEAOS - Shortly
 
 ## Desafío
 
