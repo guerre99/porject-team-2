@@ -1,6 +1,6 @@
 import { Grid, Button } from '@mui/material'
 
-function Card() {
+function Card({ originalURL, shortURL }) {
   return (
     <>
       <Grid
@@ -24,8 +24,8 @@ function Card() {
             width: '70%',
           }}
         >
-          <p>Long link</p>
-          <p style={{ color: '#2BD0D0' }}>Short link</p>
+          <p>{originalURL}</p>
+          <p style={{ color: '#2BD0D0' }}>{shortURL}</p>
         </Grid>
         <Button
           variant="contained"

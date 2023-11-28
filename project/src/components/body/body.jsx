@@ -3,10 +3,65 @@ import Card from './card'
 import { Grid, TextField, Button } from '@mui/material'
 import BackgroundLogo from './bg-shorten-desktop.svg'
 
-import { useState } from 'react'
+import axios from 'axios'
+
+import { useState, useEffect } from 'react'
 
 function Body() {
-  const [enlace, setEnlace] = useState('')
+  const [enlace, setEnlace] = useState({
+    domain: 'chg2.short.gy',
+    originalURL: '',
+  })
+
+  const [generatedLink, setGeneratedLink] = useState([])
+
+  function getallLinks() {
+    axios
+      .get(
+        'https://api.short.io/api/links?domain_id=926669&limit=30&dateSortOrder=desc',
+        {
+          headers: {
+            Authorization: 'sk_hQnlOaNQ6GFm7zdv',
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+      .then(({ data }) => {
+        console.log(data)
+        setGeneratedLink(
+          data.links.map((item) => ({
+            id: item.id,
+            originalURL: item.originalURL,
+            shortURL: item.shortURL,
+          }))
+        )
+      })
+  }
+
+  useEffect(() => {
+    getallLinks()
+  }, [])
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+
+    axios
+      .post('https://api.short.io/links', enlace, {
+        headers: {
+          Authorization: 'sk_hQnlOaNQ6GFm7zdv',
+          'Content-Type': 'application/json',
+        },
+      })
+      .then(({ data }) => {
+        getallLinks()
+      })
+      .catch((error) => {
+        console.error('Error en la solicitud:', error)
+      })
+  }
+
+  if (!Object.values(generatedLink).length) return <p>CARGANDO....</p>
+
   return (
     <>
       <Grid
@@ -30,13 +85,17 @@ function Body() {
             backgroundImage: `url(${BackgroundLogo})`,
           }}
           spacing={2}
+          onSubmit={handleSubmit}
         >
           <TextField
             id="outlined-basic"
-            label={!enlace ? 'Shorten a link here...' : ''}
+            label={!enlace.originalURL ? 'Shorten a link here...' : ''}
             variant="outlined"
-            value={enlace}
-            onChange={(e) => setEnlace(e.target.value)}
+            value={enlace.originalURL}
+            onChange={(e) => {
+              setEnlace({ ...enlace, originalURL: e.target.value })
+              console.log(enlace)
+            }}
             sx={{
               backgroundColor: 'white',
               width: '70%',
@@ -57,15 +116,14 @@ function Body() {
                 backgroundColor: '#9AE3E3',
               },
             }}
+            type="submit"
           >
             Shorten It!
           </Button>
         </Grid>
-        <Card />
-
-        <Card />
-
-        <Card />
+        {generatedLink.map((item) => (
+          <Card key={item.id} {...item} />
+        ))}
       </Grid>
     </>
   )
