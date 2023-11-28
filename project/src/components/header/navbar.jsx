@@ -20,15 +20,15 @@ export default function ButtonAppBar() {
         sx={{
           borderRadius: 10,
           backgroundColor: "transparent",
-
+          pt: 5,
           boxShadow: "none",
         }}
       >
-        <Toolbar sx={{ ml: "20%" }}>
+        <Toolbar sx={{ ml: "13%" }}>
           <Typography
             variant="h4"
             component="div"
-            sx={{ flexGrow: 1, color: "grey", fontWeight: "bold" }}
+            sx={{ flexGrow: 1, color: "black", fontWeight: "bold" }}
           >
             Shortly
           </Typography>
@@ -36,8 +36,12 @@ export default function ButtonAppBar() {
           <Button
             sx={{
               color: "gray",
+              "&:hover": {
+                color: "black",
+              },
               position: "absolute",
-              transform: "translate(150%, 0)",
+              transform: "translate(200%, 0)",
+              fontFamily: "Poppins",
             }}
           >
             Features
@@ -45,8 +49,12 @@ export default function ButtonAppBar() {
           <Button
             sx={{
               color: "gray",
+              "&:hover": {
+                color: "black",
+              },
               position: "absolute",
-              transform: "translate(320%, 0)",
+              transform: "translate(400%, 0)",
+              fontFamily: "Poppins",
             }}
           >
             Pricing
@@ -54,8 +62,12 @@ export default function ButtonAppBar() {
           <Button
             sx={{
               color: "gray",
+              "&:hover": {
+                color: "black",
+              },
               position: "absolute",
-              transform: "translate(320%, 0)",
+              transform: "translate(410%, 0)",
+              fontFamily: "Poppins",
             }}
           >
             Resources
@@ -63,7 +75,11 @@ export default function ButtonAppBar() {
           <Button
             sx={{
               color: "gray",
-              mr: "5%",
+              "&:hover": {
+                color: "black",
+              },
+              mr: "3%",
+              fontFamily: "Poppins",
             }}
           >
             Log In
@@ -72,16 +88,22 @@ export default function ButtonAppBar() {
             variant="contained"
             sx={{
               backgroundColor: "#2BD0D0",
+              "&:hover": {
+                background: "#bff0f0",
+                boxShadow: "none",
+              },
               borderRadius: "30px",
               padding: "10px 20px",
-              mr: "30%",
+              mr: "18%",
               fontFamily: "Poppins",
               fontWeight: "bold",
+              boxShadow: "none",
             }}
           >
             Sign Up
           </Button>
         </Toolbar>
+        <IconButton />
       </AppBar>
     </Box>
   );
