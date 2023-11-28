@@ -24,7 +24,7 @@ export default function ButtonAppBar() {
               fontFamily: "monospace",
               fontWeight: 700,
               letterSpacing: ".3rem",
-              color: "inherit",
+
               textDecoration: "none",
             }}
           >
@@ -33,13 +33,12 @@ export default function ButtonAppBar() {
           <IconButton
             size="large"
             edge="start"
-            color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
           >
             <MenuIcon />
           </IconButton>
-          <Button color="inherit">News</Button>
+          <Button sx={{ color: "red" }}>News</Button>
           <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
