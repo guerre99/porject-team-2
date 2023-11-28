@@ -10,8 +10,8 @@ function Header() {
       <Box
         display="flex"
         flexDirection="row"
-        justifyContent="space-between"
         alignItems="center"
+        justifyContent="center"
       >
         <Box width="20%" ml={50}>
           <h1>More than just shorter links</h1>
