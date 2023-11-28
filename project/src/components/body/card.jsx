@@ -25,7 +25,7 @@ function Card() {
           }}
         >
           <p>Long link</p>
-          <p>Short link</p>
+          <p style={{ color: '#2BD0D0' }}>Short link</p>
         </Grid>
         <Button
           variant="contained"

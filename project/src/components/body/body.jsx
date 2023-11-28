@@ -3,7 +3,10 @@ import Card from './card'
 import { Grid, TextField, Button } from '@mui/material'
 import BackgroundLogo from './bg-shorten-desktop.svg'
 
+import { useState } from 'react'
+
 function Body() {
+  const [enlace, setEnlace] = useState('')
   return (
     <>
       <Grid
@@ -30,9 +33,16 @@ function Body() {
         >
           <TextField
             id="outlined-basic"
-            label="Shorten a link here..."
+            label={!enlace ? 'Shorten a link here...' : ''}
             variant="outlined"
-            sx={{ backgroundColor: 'white', width: '70%', height: '30%' }}
+            value={enlace}
+            onChange={(e) => setEnlace(e.target.value)}
+            sx={{
+              backgroundColor: 'white',
+              width: '70%',
+              height: '30%',
+              fontFamily: 'Poppins',
+            }}
             InputLabelProps={{
               shrink: false,
             }}
