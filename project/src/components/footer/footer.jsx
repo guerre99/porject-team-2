@@ -42,6 +42,7 @@ function Footer() {
               variant='contained'
               sx={{
                 backgroundColor: '#2BD0D0',
+                boxShadow: 'none',
                 borderRadius: '20px',
                 padding: '10px 20px',
                 position: 'absolute',
@@ -50,6 +51,13 @@ function Footer() {
                 transform: 'translate(-50%, 0)',
                 fontFamily: "'MedievalSharp', cursive",
                 fontWeight: 'bold',
+                backgroundColor: {
+                  '&:hover': {
+                    boxShadow: 'none',
+                    color: '#FFFFFF',
+                    backgroundColor: '9AE3E3',
+                  },
+                },
               }}
             >
               Get Started

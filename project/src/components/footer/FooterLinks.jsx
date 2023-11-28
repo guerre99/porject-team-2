@@ -1,7 +1,6 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
-// import IconButton from '@material-ui/core/IconButton'
 import facebookIcon from './assets/icon-facebook.svg'
 import twitterIcon from './assets/icon-twitter.svg'
 import pinterestIcon from './assets/icon-pinterest.svg'
@@ -62,7 +61,13 @@ function FooterLinks() {
           }}
         >
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
+            <a
+              href='#'
+              style={{
+                textDecoration: 'none',
+                color: '#ffffff',
+              }}
+            >
               Blog
             </a>
           </li>
@@ -82,6 +87,7 @@ function FooterLinks() {
         <Typography variant='h6'>Company</Typography>
         <ul
           sx={{
+            position: 'absolute',
             listStyle: 'none',
             padding: 0,
             margin: 0,
@@ -102,9 +108,11 @@ function FooterLinks() {
             <a
               href='#'
               style={{
+                position: 'relative',
                 textDecoration: 'none',
                 color: '#ffffff',
                 style: 'list-style-type: none',
+                hover: 'red',
               }}
             >
               Careers
@@ -125,9 +133,9 @@ function FooterLinks() {
         justifyContent='flex-end'
         alignItems='center'
         sx={{
-          position: 'relative',
-          top: '-60px',
-          right: '7%',
+          position: 'absolute',
+          top: '20%',
+          right: '15%',
           display: 'flex',
         }}
       >
@@ -135,7 +143,8 @@ function FooterLinks() {
           href='#'
           style={{
             textDecoration: 'none',
-            color: '#ffffff',
+            color: '#2BD0D0',
+
             margin: '0 5px',
           }}
           className='social-icon'
@@ -156,6 +165,7 @@ function FooterLinks() {
           style={{
             textDecoration: 'none',
             color: '#ffffff',
+
             margin: '0 5px',
           }}
           className='social-icon'
