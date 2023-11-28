@@ -1,11 +1,10 @@
 import './styles.css'
 
 import './components/footer/footer.css'
-import Header from "./components/header/header";
+import Header from './components/header/header'
 import Footer from './components/footer/footer'
 
 import Body from './components/body/body'
-
 
 function App() {
   return (
@@ -14,7 +13,7 @@ function App() {
       <Body />
       <Footer />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
