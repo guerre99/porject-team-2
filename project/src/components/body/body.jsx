@@ -11,7 +11,7 @@ function Body() {
         direction="column"
         justifyContent="flex-start"
         alignItems="center"
-        sx={{ backgroundColor: '#EFF1F7', m: '10' }}
+        sx={{ backgroundColor: '#EFF1F7' }}
       >
         <Grid
           component="form"
