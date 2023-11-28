@@ -1,0 +1,6 @@
+ul li {
+  list-style-type: none;
+  &:hover {
+    color: #2bd0d0;
+  }
+}

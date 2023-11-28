@@ -1,5 +1,3 @@
-// Footer.jsx
-
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import { Typography, Button } from '@mui/material'
@@ -28,7 +26,7 @@ function Footer() {
             <Typography
               variant='h6'
               sx={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: 'Poppins',
                 fontWeight: 'bold',
                 color: '#ffffff',
                 position: 'absolute',

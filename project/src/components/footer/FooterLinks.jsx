@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import { Typography } from '@mui/material'
+// import IconButton from '@material-ui/core/IconButton'
 import facebookIcon from './assets/icon-facebook.svg'
 import twitterIcon from './assets/icon-twitter.svg'
 import pinterestIcon from './assets/icon-pinterest.svg'
@@ -16,13 +17,13 @@ function FooterLinks() {
         color: '#ffffff',
         padding: '50px 0',
         width: '100%',
-        position: 'relative',
+        position: 'absolute',
       }}
     >
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h5'>Shortly</Typography>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h6'>Features</Typography>
         <ul
           sx={{
@@ -49,9 +50,10 @@ function FooterLinks() {
           </li>
         </ul>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h6'>Resources</Typography>
         <ul
+          className='footer-list'
           sx={{
             listStyle: 'none',
             padding: 0,
@@ -76,7 +78,7 @@ function FooterLinks() {
           </li>
         </ul>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={10} md={2}>
         <Typography variant='h6'>Company</Typography>
         <ul
           sx={{
@@ -97,7 +99,14 @@ function FooterLinks() {
             </a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
+            <a
+              href='#'
+              style={{
+                textDecoration: 'none',
+                color: '#ffffff',
+                style: 'list-style-type: none',
+              }}
+            >
               Careers
             </a>
           </li>
@@ -112,12 +121,13 @@ function FooterLinks() {
         container
         item
         xs={12}
+        md={1}
         justifyContent='flex-end'
         alignItems='center'
         sx={{
-          position: 'absolute',
-          top: '20px',
-          right: '0',
+          position: 'relative',
+          top: '-60px',
+          right: '7%',
           display: 'flex',
         }}
       >
@@ -155,8 +165,9 @@ function FooterLinks() {
             alt='Twitter Icon'
             sx={{
               width: '30px',
-              '&:hover': {
-                color: '#2BD0D0',
+
+              '&:hover $icon': {
+                color: 'red',
               },
             }}
           />
@@ -167,6 +178,7 @@ function FooterLinks() {
             textDecoration: 'none',
             color: '#ffffff',
             margin: '0 5px',
+            hover: '#2BD0D0',
           }}
           className='social-icon'
         >
