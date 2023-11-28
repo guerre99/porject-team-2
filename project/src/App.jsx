@@ -1,6 +1,4 @@
 import './styles.css'
-import '@fontsource/poppins/500.css'
-import '@fontsource/poppins/700.css'
 
 import './components/footer/footer.css'
 import Header from './components/header/header'
