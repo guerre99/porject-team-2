@@ -1,5 +1,3 @@
-// Footer.jsx
-
 import React from 'react'
 import Grid from '@mui/material/Grid'
 import { Typography, Button } from '@mui/material'
@@ -28,7 +26,7 @@ function Footer() {
             <Typography
               variant='h6'
               sx={{
-                fontFamily: "'Poppins', sans-serif",
+                fontFamily: 'Poppins',
                 fontWeight: 'bold',
                 color: '#ffffff',
                 position: 'absolute',
@@ -43,15 +41,22 @@ function Footer() {
             <Button
               variant='contained'
               sx={{
-                backgroundColor: '#2BD0D0',
+                boxShadow: 'none',
                 borderRadius: '20px',
                 padding: '10px 20px',
                 position: 'absolute',
                 top: '70%',
                 left: '50%',
                 transform: 'translate(-50%, 0)',
-                fontFamily: "'MedievalSharp', cursive",
+                fontFamily: "'Poppins', sans-serif",
                 fontWeight: 'bold',
+                backgroundColor: {
+                  '&:hover': {
+                    boxShadow: 'none',
+                    color: '#FFFFFF',
+                    backgroundColor: '#9AE3E3',
+                  },
+                },
               }}
             >
               Get Started

@@ -1,5 +1,5 @@
 import Card from './card'
-
+import Middlebody from './middlebody'
 import { Grid, TextField, Button } from '@mui/material'
 import BackgroundLogo from './bg-shorten-desktop.svg'
 
@@ -8,17 +8,17 @@ function Body() {
     <>
       <Grid
         container
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="center"
+        direction='column'
+        justifyContent='flex-start'
+        alignItems='center'
         sx={{ backgroundColor: '#EFF1F7' }}
       >
         <Grid
-          component="form"
+          component='form'
           container
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-evenly'
+          alignItems='center'
           width={'70%'}
           sx={{
             mb: '1%',
@@ -29,16 +29,16 @@ function Body() {
           spacing={2}
         >
           <TextField
-            id="outlined-basic"
-            label="Shorten a link here..."
-            variant="outlined"
+            id='outlined-basic'
+            label='Shorten a link here...'
+            variant='outlined'
             sx={{ backgroundColor: 'white', width: '70%', height: '30%' }}
             InputLabelProps={{
               shrink: false,
             }}
           />
           <Button
-            variant="contained"
+            variant='contained'
             sx={{
               width: '20%',
               height: '100%',
@@ -56,6 +56,7 @@ function Body() {
         <Card />
 
         <Card />
+        <Middlebody />
       </Grid>
     </>
   )
