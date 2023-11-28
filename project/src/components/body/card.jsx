@@ -9,7 +9,7 @@ function Card({ originalURL, shortURL }) {
         justifyContent="space-around"
         alignItems="center"
         sx={{
-          width: '60%',
+          width: '70%',
           mx: 'auto',
           my: '2%',
           backgroundColor: 'white',
@@ -22,6 +22,7 @@ function Card({ originalURL, shortURL }) {
           alignItems="center"
           sx={{
             width: '70%',
+            wordBreak: 'break-all',
           }}
         >
           <p>{originalURL}</p>

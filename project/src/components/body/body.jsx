@@ -15,6 +15,8 @@ function Body() {
 
   const [generatedLink, setGeneratedLink] = useState([])
 
+  const [errorInput, setErrorInput] = useState(false)
+
   function getallLinks() {
     axios
       .get(
@@ -27,7 +29,6 @@ function Body() {
         }
       )
       .then(({ data }) => {
-        console.log(data)
         setGeneratedLink(
           data.links.map((item) => ({
             id: item.id,
@@ -44,20 +45,27 @@ function Body() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
+    if (e.target.value) {
+      axios
+        .post('https://api.short.io/links', enlace, {
+          headers: {
+            Authorization: 'sk_hQnlOaNQ6GFm7zdv',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ allowDuplicates: false }),
+        })
+        .then(({ data }) => {
+          getallLinks()
+          setErrorInput(false)
+        })
+        .catch((error) => {
+          console.error('Error en la solicitud:', error)
+        })
+    }
 
-    axios
-      .post('https://api.short.io/links', enlace, {
-        headers: {
-          Authorization: 'sk_hQnlOaNQ6GFm7zdv',
-          'Content-Type': 'application/json',
-        },
-      })
-      .then(({ data }) => {
-        getallLinks()
-      })
-      .catch((error) => {
-        console.error('Error en la solicitud:', error)
-      })
+    if (!e.target.value) {
+      setErrorInput(true)
+    }
   }
 
   if (!Object.values(generatedLink).length) return <p>CARGANDO....</p>
@@ -79,6 +87,7 @@ function Body() {
           alignItems="center"
           width={'70%'}
           sx={{
+            ml: '0',
             mb: '1%',
             p: '1.5%',
             backgroundColor: '#3A3054',
@@ -89,18 +98,24 @@ function Body() {
         >
           <TextField
             id="outlined-basic"
-            label={!enlace.originalURL ? 'Shorten a link here...' : ''}
+            error={errorInput}
+            label={
+              !errorInput
+                ? !enlace.originalURL
+                  ? 'Shorten a link here...'
+                  : ''
+                : 'Please add a link...'
+            }
             variant="outlined"
             value={enlace.originalURL}
             onChange={(e) => {
               setEnlace({ ...enlace, originalURL: e.target.value })
-              console.log(enlace)
+              setErrorInput(false)
             }}
             sx={{
-              backgroundColor: 'white',
               width: '70%',
               height: '30%',
-              fontFamily: 'Poppins',
+              '&>*  ': { fontFamily: 'Poppins', backgroundColor: 'white' },
             }}
             InputLabelProps={{
               shrink: false,
@@ -121,6 +136,7 @@ function Body() {
             Shorten It!
           </Button>
         </Grid>
+
         {generatedLink.map((item) => (
           <Card key={item.id} {...item} />
         ))}
