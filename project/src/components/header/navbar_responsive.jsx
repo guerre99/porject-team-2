@@ -1,4 +1,5 @@
 import * as React from "react";
+import "./styles.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -8,6 +9,7 @@ import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import { Paper } from "@mui/material";
 
 import MenuItem from "@mui/material/MenuItem";
 
@@ -60,27 +62,34 @@ function ResponsiveAppBar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              sx={{ transform: "translate 50%, 0" }}
             >
-              <MenuIcon sx={{ pl: 10, pr: 10, mr: 50 }} />
+              <MenuIcon sx={{ pl: 10, pr: 10 }} />
             </IconButton>
+
             <Menu
               id="menu-appbar"
+              style={{ width: "100%", justifyContent: "center" }}
               anchorEl={anchorElNav}
               anchorOrigin={{
                 vertical: "bottom",
+
                 horizontal: "right",
               }}
               keepMounted
               transformOrigin={{
                 vertical: "top",
+
                 horizontal: "right",
               }}
               open={Boolean(anchorElNav)}
               onClose={handleCloseNavMenu}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem
+                  id="blockMenu"
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                >
                   <Typography>{page}</Typography>
                 </MenuItem>
               ))}
