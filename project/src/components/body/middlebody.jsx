@@ -3,6 +3,7 @@ import React from 'react'
 import icon1 from './assets/icon-brand-recognition.svg'
 import icon2 from './assets/icon-detailed-records.svg'
 import icon3 from './assets/icon-fully-customizable.svg'
+import barra from './assets/Rectangle.png'
 
 function Middlebody() {
   return (
@@ -47,7 +48,7 @@ function Middlebody() {
         xs={12}
         md={3}
         sm={10}
-        sx={{ display: 'flex', justifyContent: 'space-between' }}
+        sx={{ display: 'flex', justifyContent: 'space-between', flexShrink: 0 }}
       >
         <Box
           sx={{
@@ -58,10 +59,14 @@ function Middlebody() {
             width: '100%',
             alignItems: 'center',
             textAlign: 'left',
-            marginBottom: '100px',
+            marginBottom: '50px',
             marginBottom: '50px',
             marginLeft: '300px',
             marginRight: '30px',
+            borderRadius: '5px',
+            background: '#FFF',
+            padding: '20px',
+            zIndex: 2,
           }}
         >
           <Typography>
@@ -96,8 +101,12 @@ function Middlebody() {
             width: '100%',
             alignItems: 'center',
             textAlign: 'left',
-            marginTop: '100px',
+            marginTop: '20px',
             marginBottom: '50px',
+            borderRadius: '5px',
+            background: '#FFF',
+            padding: '20px',
+            zIndex: 2,
           }}
         >
           <Typography>
@@ -123,6 +132,18 @@ function Middlebody() {
             </p>
           </Typography>
         </Box>
+        <div
+          style={{
+            width: '1110px',
+            height: '8px',
+            background: '#2BD0D0',
+            position: 'absolute',
+            top: '132%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1,
+          }}
+        />
 
         <Box
           sx={{
@@ -133,10 +154,14 @@ function Middlebody() {
             width: '100%',
             alignItems: 'center',
             textAlign: 'left',
-            marginTop: '200px',
+            marginTop: '60px',
             marginBottom: '50px',
-            marginRight: '200px',
-            marginLeft: '50px',
+            marginRight: '250px',
+            marginLeft: '30px',
+            borderRadius: '5px',
+            background: '#FFF',
+            padding: '50px',
+            zIndex: 2,
           }}
         >
           <Typography>
@@ -161,6 +186,11 @@ function Middlebody() {
             </p>
           </Typography>
         </Box>
+        <Box
+          sx={{
+            barra: `url(${barra})`,
+          }}
+        ></Box>
       </Box>
     </Grid>
   )
