@@ -13,7 +13,7 @@ function Header() {
         justifyContent="space-between"
         alignItems="center"
       >
-        <Box width="20%" ml={15}>
+        <Box width="20%" ml={50}>
           <h1>More than just shorter links</h1>
           <p>
             Build your brand's recognition and get detailed insights on how your
