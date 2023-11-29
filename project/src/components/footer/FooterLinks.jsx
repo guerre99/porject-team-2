@@ -5,7 +5,7 @@ import facebookIcon from './assets/icon-facebook.svg'
 import twitterIcon from './assets/icon-twitter.svg'
 import pinterestIcon from './assets/icon-pinterest.svg'
 import instagramIcon from './assets/icon-instagram.svg'
-
+import './footer.css'
 function FooterLinks() {
   return (
     <Grid
@@ -16,13 +16,13 @@ function FooterLinks() {
         color: '#ffffff',
         padding: '50px 0',
         width: '100%',
-        position: 'relative',
+        position: 'absolute',
       }}
     >
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h5'>Shortly</Typography>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h6'>Features</Typography>
         <ul
           sx={{
@@ -33,25 +33,20 @@ function FooterLinks() {
           }}
         >
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Link Shortening
-            </a>
+            <a href='#'>Link Shortening</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Branded Links
-            </a>
+            <a href='#'>Branded Links</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Analytics
-            </a>
+            <a href='#'>Analytics</a>
           </li>
         </ul>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={2}>
         <Typography variant='h6'>Resources</Typography>
         <ul
+          className='footer-list'
           sx={{
             listStyle: 'none',
             padding: 0,
@@ -60,26 +55,21 @@ function FooterLinks() {
           }}
         >
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Blog
-            </a>
+            <a href='#'>Blog</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Developers
-            </a>
+            <a href='#'>Developers</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Support
-            </a>
+            <a href='#'>Support</a>
           </li>
         </ul>
       </Grid>
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={10} md={2}>
         <Typography variant='h6'>Company</Typography>
         <ul
           sx={{
+            position: 'absolute',
             listStyle: 'none',
             padding: 0,
             margin: 0,
@@ -87,24 +77,16 @@ function FooterLinks() {
           }}
         >
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              About
-            </a>
+            <a href='#'>About</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Our Team
-            </a>
+            <a href='#'>Our Team</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Careers
-            </a>
+            <a href='#'>Careers</a>
           </li>
           <li>
-            <a href='#' style={{ textDecoration: 'none', color: '#ffffff' }}>
-              Contact
-            </a>
+            <a href='#'>Contact</a>
           </li>
         </ul>
       </Grid>
@@ -112,12 +94,13 @@ function FooterLinks() {
         container
         item
         xs={12}
+        md={1}
         justifyContent='flex-end'
         alignItems='center'
         sx={{
           position: 'absolute',
-          top: '20px',
-          right: '0',
+          top: '20%',
+          right: '15%',
           display: 'flex',
         }}
       >
@@ -125,81 +108,22 @@ function FooterLinks() {
           href='#'
           style={{
             textDecoration: 'none',
-            color: '#ffffff',
+            color: '#2BD0D0',
+
             margin: '0 5px',
           }}
           className='social-icon'
         >
-          <img
-            src={facebookIcon}
-            alt='Facebook Icon'
-            sx={{
-              width: '30px',
-              '&:hover': {
-                color: '#2BD0D0',
-              },
-            }}
-          />
+          <img src={facebookIcon} alt='Facebook Icon' />
         </a>
-        <a
-          href='#'
-          style={{
-            textDecoration: 'none',
-            color: '#ffffff',
-            margin: '0 5px',
-          }}
-          className='social-icon'
-        >
-          <img
-            src={twitterIcon}
-            alt='Twitter Icon'
-            sx={{
-              width: '30px',
-              '&:hover': {
-                color: '#2BD0D0',
-              },
-            }}
-          />
+        <a href='#' style={{}} className='social-icon'>
+          <img src={twitterIcon} alt='Twitter Icon' />
         </a>
-        <a
-          href='#'
-          style={{
-            textDecoration: 'none',
-            color: '#ffffff',
-            margin: '0 5px',
-          }}
-          className='social-icon'
-        >
-          <img
-            src={pinterestIcon}
-            alt='Pinterest Icon'
-            sx={{
-              width: '30px',
-              '&:hover': {
-                color: '#2BD0D0',
-              },
-            }}
-          />
+        <a href='#' style={{}} className='social-icon'>
+          <img src={pinterestIcon} alt='Pinterest Icon' />
         </a>
-        <a
-          href='#'
-          style={{
-            textDecoration: 'none',
-            color: '#ffffff',
-            margin: '0 5px',
-          }}
-          className='social-icon'
-        >
-          <img
-            src={instagramIcon}
-            alt='Instagram Icon'
-            sx={{
-              width: '30px',
-              '&:hover': {
-                color: '#2BD0D0',
-              },
-            }}
-          />
+        <a href='#' style={{}} className='social-icon'>
+          <img src={instagramIcon} alt='Instagram Icon' />
         </a>
       </Grid>
     </Grid>

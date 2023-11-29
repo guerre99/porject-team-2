@@ -1,0 +1,24 @@
+ul li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+a:hover,
+.social-icon:hover {
+  color: #2bd0d0;
+}
+
+.social-icon {
+  text-decoration: none;
+
+  transition: color 0.3s;
+}
+
+.social-icon:hover {
+  color: #2bd0d0;
+}
