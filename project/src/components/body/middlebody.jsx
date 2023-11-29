@@ -44,7 +44,7 @@ function Middlebody() {
       </Grid>
 
       <Box
-        container
+        container='true'
         xs={12}
         md={3}
         sm={10}
@@ -69,7 +69,7 @@ function Middlebody() {
             zIndex: 2,
           }}
         >
-          <Typography>
+          <Typography component='div'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='88'
@@ -109,7 +109,7 @@ function Middlebody() {
             zIndex: 2,
           }}
         >
-          <Typography>
+          <Typography component='div'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='88'
@@ -164,7 +164,7 @@ function Middlebody() {
             zIndex: 2,
           }}
         >
-          <Typography>
+          <Typography component='div'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='88'
