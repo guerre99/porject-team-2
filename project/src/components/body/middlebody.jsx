@@ -12,7 +12,7 @@ function Middlebody() {
       direction='column'
       alignItems='center'
       justifyContent='center'
-      sx={{ padding: '20px', textAlign: 'center' }}
+      sx={{ padding: '20px', textAlign: 'center', position: 'relative' }}
     >
       <Grid item container justifyContent='center'>
         <Typography
@@ -28,7 +28,7 @@ function Middlebody() {
         justifyContent='center'
         sx={{
           color: '#9E9AA8',
-          padding: '0 16px', // Ajuste del padding para pantallas más pequeñas
+          padding: '0 16px',
           textAlign: 'center',
           textDecoration: 'none',
         }}
@@ -37,14 +37,14 @@ function Middlebody() {
           variant='p'
           sx={{
             fontWeight: 500,
-            fontSize: '16px', // Ajuste del tamaño de fuente para pantallas más pequeñas
-            lineHeight: '24px', // Ajuste de la altura de línea para pantallas más pequeñas
+            fontSize: '16px',
+            lineHeight: '24px',
             marginBottom: '20px',
           }}
         >
           <p>
-            Rastrea cómo tus enlaces están funcionando en la web con nuestro
-            panel de estadísticas avanzadas.
+            Track how your links are performing across the web with our advanced
+            statistics dashboard.
           </p>
         </Typography>
       </Grid>
@@ -53,21 +53,21 @@ function Middlebody() {
         container
         spacing={2}
         justifyContent='center'
-        sx={{ marginTop: '20px' }}
+        sx={{ marginTop: '20px', position: 'relative', zIndex: 2 }}
       >
-        {/* Caja de Brand Recognition */}
         <Grid item xs={12} md={4}>
           <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center', // Centrar en dispositivos móviles
-              textAlign: 'center', // Centrar el texto en dispositivos móviles
+              alignItems: 'center',
+              textAlign: 'center',
               borderRadius: '5px',
               background: '#FFF',
               padding: '20px',
               marginBottom: '20px',
               position: 'relative',
+              zIndex: 2,
             }}
           >
             <Typography component='div'>
@@ -91,19 +91,19 @@ function Middlebody() {
           </Box>
         </Grid>
 
-        {/* Caja de Detailed Records */}
         <Grid item xs={12} md={4}>
           <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center', // Centrar en dispositivos móviles
-              textAlign: 'center', // Centrar el texto en dispositivos móviles
+              alignItems: 'center',
+              textAlign: 'center',
               borderRadius: '5px',
               background: '#FFF',
               padding: '20px',
               marginBottom: '20px',
               position: 'relative',
+              zIndex: 2,
             }}
           >
             <Typography component='div'>
@@ -127,19 +127,19 @@ function Middlebody() {
           </Box>
         </Grid>
 
-        {/* Caja de Fully Customizable */}
         <Grid item xs={12} md={4}>
           <Box
             sx={{
               display: 'flex',
               flexDirection: 'column',
-              alignItems: 'center', // Centrar en dispositivos móviles
-              textAlign: 'center', // Centrar el texto en dispositivos móviles
+              alignItems: 'center',
+              textAlign: 'center',
               borderRadius: '5px',
               background: '#FFF',
               padding: '20px',
               marginBottom: '20px',
               position: 'relative',
+              zIndex: 2,
             }}
           >
             <Typography component='div'>
@@ -163,22 +163,16 @@ function Middlebody() {
         </Grid>
       </Grid>
 
-      {/* Barra Horizontal */}
-      <Box
-        sx={{
-          width: '100%',
-          height: '8px',
-          background: '#2BD0D0',
-          marginBottom: '20px',
-        }}
-      />
-
-      {/* Rectángulo */}
       <Box
         component='img'
         src={barra}
         alt='Rectangle'
-        sx={{ width: '100%', position: 'relative' }}
+        sx={{
+          width: '80%',
+          position: 'absolute',
+          bottom: '30%',
+          zIndex: 1,
+        }}
       />
     </Grid>
   )
