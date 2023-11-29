@@ -5,42 +5,105 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href="#app-bar-with-responsive-menu"
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
+    <Box
+      sx={{
+        pt: 6,
 
-              textDecoration: "none",
+        display: "flex",
+        justifyContent: "center",
+      }}
+    >
+      <AppBar
+        sx={{
+          borderRadius: 10,
+          backgroundColor: "transparent",
+          pt: 5,
+          boxShadow: "none",
+        }}
+      >
+        <Toolbar sx={{ ml: "13%" }}>
+          <Typography
+            variant="h4"
+            component="div"
+            sx={{ flexGrow: 1, color: "black", fontWeight: "bold" }}
+          >
+            Shortly
+          </Typography>
+
+          <Button
+            sx={{
+              color: "gray",
+              "&:hover": {
+                color: "black",
+              },
+              position: "absolute",
+              transform: "translate(200%, 0)",
+              fontFamily: "Poppins",
             }}
           >
-            Holaaaaa
-          </Typography>
-          <IconButton
-            size="large"
-            edge="start"
-            aria-label="menu"
-            sx={{ mr: 2 }}
+            Features
+          </Button>
+          <Button
+            sx={{
+              color: "gray",
+              "&:hover": {
+                color: "black",
+              },
+              position: "absolute",
+              transform: "translate(400%, 0)",
+              fontFamily: "Poppins",
+            }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Button sx={{ color: "red" }}>News</Button>
-          <Button color="inherit">Login</Button>
+            Pricing
+          </Button>
+          <Button
+            sx={{
+              color: "gray",
+              "&:hover": {
+                color: "black",
+              },
+              position: "absolute",
+              transform: "translate(410%, 0)",
+              fontFamily: "Poppins",
+            }}
+          >
+            Resources
+          </Button>
+          <Button
+            sx={{
+              color: "gray",
+              "&:hover": {
+                color: "black",
+              },
+              mr: "3%",
+              fontFamily: "Poppins",
+            }}
+          >
+            Log In
+          </Button>
+          <Button
+            variant="contained"
+            sx={{
+              backgroundColor: "#2BD0D0",
+              "&:hover": {
+                background: "#bff0f0",
+                boxShadow: "none",
+              },
+              borderRadius: "30px",
+              padding: "10px 20px",
+              mr: "18%",
+              fontFamily: "Poppins",
+              fontWeight: "bold",
+              boxShadow: "none",
+            }}
+          >
+            Sign Up
+          </Button>
         </Toolbar>
+        <IconButton />
       </AppBar>
     </Box>
   );
