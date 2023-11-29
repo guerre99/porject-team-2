@@ -48,14 +48,12 @@ function Header() {
               Get Started
             </Button>
           </Box>
-
           <Box>
             <ImageList sx={{ transform: 'translate(20%, 40%)' }}>
               <img src={myImage} alt="hola" width="500px" />
             </ImageList>
           </Box>
         </Box>
-      </header>
     </>
   )
 }
