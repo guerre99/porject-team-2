@@ -72,7 +72,7 @@ function Body() {
   return (
     <>
       <Grid
-        component="body"
+        component="main"
         container
         direction="column"
         justifyContent="flex-start"
