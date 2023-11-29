@@ -1,6 +1,6 @@
 import { Grid, Button } from '@mui/material'
 
-function Card() {
+function Card({ originalURL, shortURL }) {
   return (
     <>
       <Grid
@@ -9,7 +9,7 @@ function Card() {
         justifyContent="space-around"
         alignItems="center"
         sx={{
-          width: '60%',
+          width: '70%',
           mx: 'auto',
           my: '2%',
           backgroundColor: 'white',
@@ -22,10 +22,11 @@ function Card() {
           alignItems="center"
           sx={{
             width: '70%',
+            wordBreak: 'break-all',
           }}
         >
-          <p>Long link</p>
-          <p>Short link</p>
+          <p>{originalURL}</p>
+          <p style={{ color: '#2BD0D0' }}>{shortURL}</p>
         </Grid>
         <Button
           variant="contained"
