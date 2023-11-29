@@ -53,13 +53,12 @@ function Middlebody() {
         <Box
           sx={{
             display: 'flex',
-            padding: '0 3%',
+
             flexDirection: 'column',
 
             width: '100%',
             alignItems: 'center',
             textAlign: 'left',
-            marginBottom: '50px',
             marginBottom: '50px',
             marginLeft: '300px',
             marginRight: '30px',
@@ -97,7 +96,7 @@ function Middlebody() {
           sx={{
             display: 'flex',
             flexDirection: 'column',
-            padding: '0 3%',
+
             width: '100%',
             alignItems: 'center',
             textAlign: 'left',
@@ -148,7 +147,7 @@ function Middlebody() {
         <Box
           sx={{
             display: 'flex',
-            padding: '0 3%',
+
             flexDirection: 'column',
 
             width: '100%',
