@@ -28,6 +28,8 @@ function ResponsiveAppBar() {
 
   return (
     <AppBar
+      position="static"
+      component="nav"
       sx={{
         borderRadius: 10,
         backgroundColor: "transparent",
@@ -35,7 +37,7 @@ function ResponsiveAppBar() {
         boxShadow: "none",
       }}
     >
-      <Container maxWidth="xl" sx={{ width: "75%" }}>
+      <Container sx={{ backgroundColor: "red" }}>
         <Toolbar>
           <Typography
             variant="h4"
@@ -133,7 +135,7 @@ function ResponsiveAppBar() {
               </Button>
             ))}
 
-            <Box sx={{ display: "flex", ml: 60 }}>
+            <Box sx={{ display: "flex", justifyContent: "space-between" }}>
               <Button
                 sx={{
                   color: "gray",

@@ -45,25 +45,24 @@ function Body() {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    if (e.target.value) {
+
+    if (enlace.originalURL.trim() !== '') {
       axios
         .post('https://api.short.io/links', enlace, {
           headers: {
             Authorization: 'sk_hQnlOaNQ6GFm7zdv',
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ allowDuplicates: false }),
         })
         .then(({ data }) => {
           getallLinks()
           setErrorInput(false)
+          setEnlace({ ...enlace, originalURL: '' })
         })
         .catch((error) => {
           console.error('Error en la solicitud:', error)
         })
-    }
-
-    if (!e.target.value) {
+    } else {
       setErrorInput(true)
     }
   }
@@ -73,18 +72,19 @@ function Body() {
   return (
     <>
       <Grid
+        component="main"
         container
-        direction='column'
-        justifyContent='flex-start'
-        alignItems='center'
+        direction="column"
+        justifyContent="flex-start"
+        alignItems="center"
         sx={{ backgroundColor: '#EFF1F7' }}
       >
         <Grid
-          component='form'
+          component="form"
           container
-          direction='row'
-          justifyContent='space-evenly'
-          alignItems='center'
+          direction="row"
+          justifyContent="space-evenly"
+          alignItems="center"
           width={'70%'}
           sx={{
             ml: '0',
@@ -122,7 +122,7 @@ function Body() {
             }}
           />
           <Button
-            variant='contained'
+            variant="contained"
             sx={{
               width: '20%',
               height: '100%',
