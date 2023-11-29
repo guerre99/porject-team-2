@@ -19,7 +19,7 @@ function Middlebody() {
           variant='h3'
           sx={{ fontWeight: 700, color: '#34313D', textAlign: 'center' }}
         >
-          Estadísticas Avanzadas
+          Advanced Statistics
         </Typography>
       </Grid>
       <Grid
@@ -135,6 +135,7 @@ function Middlebody() {
               alignItems: 'center',
               textAlign: 'center',
               borderRadius: '5px',
+              height: '90%',
               background: '#FFF',
               padding: '20px',
               marginBottom: '20px',
@@ -172,6 +173,14 @@ function Middlebody() {
           position: 'absolute',
           bottom: '30%',
           zIndex: 1,
+          transform: 'rotate(0deg)',
+          transformOrigin: 'center',
+          '@media (max-width: 600px)': {
+            transform: 'rotate(0deg)',
+            width: '8px',
+            height: '60%',
+            bottom: '10%',
+          },
         }}
       />
     </Grid>
