@@ -9,13 +9,13 @@ import { useState, useEffect } from 'react'
 
 function Body() {
   const [enlace, setEnlace] = useState({
-    domain: 'chg2.short.gy',
-    originalURL: '',
+    domain: 'chg2.short.gy', // dominio nuestro generado por short io
+    originalURL: '', // donde metemos el valor del input
   })
 
-  const [generatedLink, setGeneratedLink] = useState([])
+  const [generatedLink, setGeneratedLink] = useState([]) // array con las urls generadas
 
-  const [errorInput, setErrorInput] = useState(false)
+  const [errorInput, setErrorInput] = useState(false) // controlador errores
 
   function getallLinks() {
     axios
@@ -23,12 +23,13 @@ function Body() {
         'https://api.short.io/api/links?domain_id=926669&limit=30&dateSortOrder=desc',
         {
           headers: {
-            Authorization: 'sk_hQnlOaNQ6GFm7zdv',
+            Authorization: 'sk_hQnlOaNQ6GFm7zdv', // esconder
             'Content-Type': 'application/json',
           },
         }
       )
       .then(({ data }) => {
+        console.log(data)
         setGeneratedLink(
           data.links.map((item) => ({
             id: item.id,
@@ -41,12 +42,13 @@ function Body() {
 
   useEffect(() => {
     getallLinks()
-  }, [])
+  }, []) // llama a la funcion cuando carga la pagina
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
     if (enlace.originalURL.trim() !== '') {
+      // si el input no esta vacio...
       axios
         .post('https://api.short.io/links', enlace, {
           headers: {
@@ -72,19 +74,19 @@ function Body() {
   return (
     <>
       <Grid
-        component="body"
+        component='main'
         container
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{ backgroundColor: '#EFF1F7' }}
+        direction='column'
+        justifyContent='flex-start'
+        alignItems='center'
+        sx={{ backgroundColor: '#FFFFFF' }}
       >
         <Grid
-          component="form"
+          component='form'
           container
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-evenly'
+          alignItems='center'
           width={'70%'}
           sx={{
             ml: '0',
@@ -97,7 +99,7 @@ function Body() {
           onSubmit={handleSubmit}
         >
           <TextField
-            id="outlined-basic"
+            id='outlined-basic'
             error={errorInput}
             label={
               !errorInput
@@ -106,7 +108,7 @@ function Body() {
                   : ''
                 : 'Please add a link...'
             }
-            variant="outlined"
+            variant='outlined'
             value={enlace.originalURL}
             onChange={(e) => {
               setEnlace({ ...enlace, originalURL: e.target.value })
@@ -122,7 +124,7 @@ function Body() {
             }}
           />
           <Button
-            variant="contained"
+            variant='contained'
             sx={{
               width: '20%',
               height: '100%',
@@ -131,7 +133,7 @@ function Body() {
                 backgroundColor: '#9AE3E3',
               },
             }}
-            type="submit"
+            type='submit'
           >
             Shorten It!
           </Button>

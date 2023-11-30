@@ -2,7 +2,7 @@ import React from "react";
 
 import ResponsiveAppBar from "./navbar";
 import { Box, Button, ImageList, Grid } from "@mui/material";
-import myImage from "../../../../assets/illustration-working.svg";
+
 
 function Header() {
   return (
@@ -17,16 +17,16 @@ function Header() {
         <ResponsiveAppBar />
 
         <Box
-          display="grid"
-          gridTemplateColumns="repeat(12, 1fr)"
+          display='grid'
+          gridTemplateColumns='repeat(12, 1fr)'
           gap={5}
-          mb="8%"
+          mb='8%'
         >
           <Box
-            gridColumn="span 8"
+            gridColumn='span 8'
             sx={{
-              mt: "24%",
-              ml: "30%",
+              mt: '24%',
+              ml: '30%',
             }}
           >
             <h1>More than just shorter links</h1>
@@ -35,34 +35,33 @@ function Header() {
               your links are performing.
             </p>
             <Button
-              variant="contained"
+              variant='contained'
               sx={{
-                backgroundColor: "#2BD0D0",
-                "&:hover": {
-                  background: "#bff0f0",
-                  boxShadow: "none",
+                backgroundColor: '#2BD0D0',
+                '&:hover': {
+                  background: '#bff0f0',
+                  boxShadow: 'none',
                 },
-                borderRadius: "30px",
-                padding: "10px 20px",
-                mr: "18%",
-                fontFamily: "Poppins",
-                fontWeight: "bold",
-                boxShadow: "none",
+                borderRadius: '30px',
+                padding: '10px 20px',
+                mr: '18%',
+                fontFamily: 'Poppins',
+                fontWeight: 'bold',
+                boxShadow: 'none',
               }}
             >
               Get Started
             </Button>
           </Box>
-
           <Box>
-            <ImageList sx={{ transform: "translate(20%, 40%)" }}>
-              <img src={myImage} alt="hola" width="500px" />
+            <ImageList sx={{ transform: 'translate(20%, 40%)' }}>
+              <img src={myImage} alt='hola' width='500px' />
             </ImageList>
           </Box>
         </Box>
       </header>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header
