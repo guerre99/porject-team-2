@@ -1,29 +1,29 @@
-import React from "react";
+import React from 'react'
 
-import ResponsiveAppBar from "./navbar";
-import { Box, Button, ImageList, Grid } from "@mui/material";
-
+import ResponsiveAppBar from './navbar'
+import { Box, Button, ImageList, Grid } from '@mui/material'
+import myImage from '../../../../assets/illustration-working.svg'
 
 function Header() {
   return (
     <>
       <header
         style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
         }}
       >
         <ResponsiveAppBar />
 
         <Box
-          display='grid'
-          gridTemplateColumns='repeat(12, 1fr)'
+          display="grid"
+          gridTemplateColumns="repeat(12, 1fr)"
           gap={5}
-          mb='8%'
+          mb="8%"
         >
           <Box
-            gridColumn='span 8'
+            gridColumn="span 8"
             sx={{
               mt: '24%',
               ml: '30%',
@@ -35,7 +35,7 @@ function Header() {
               your links are performing.
             </p>
             <Button
-              variant='contained'
+              variant="contained"
               sx={{
                 backgroundColor: '#2BD0D0',
                 '&:hover': {
@@ -55,7 +55,7 @@ function Header() {
           </Box>
           <Box>
             <ImageList sx={{ transform: 'translate(20%, 40%)' }}>
-              <img src={myImage} alt='hola' width='500px' />
+              <img src={myImage} alt="hola" width="500px" />
             </ImageList>
           </Box>
         </Box>
