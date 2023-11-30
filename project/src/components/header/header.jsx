@@ -1,5 +1,5 @@
 import React from "react";
-// import ButtonAppBar from "./navbar";
+
 import ResponsiveAppBar from "./navbar_responsive";
 import { Box, Button, ImageList, Grid } from "@mui/material";
 import myImage from "../../../../assets/illustration-working.svg";
@@ -7,8 +7,13 @@ import myImage from "../../../../assets/illustration-working.svg";
 function Header() {
   return (
     <>
-      <header>
-        {/* <ButtonAppBar /> */}
+      <header
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <ResponsiveAppBar />
 
         <Box
