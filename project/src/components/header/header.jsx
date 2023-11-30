@@ -11,7 +11,6 @@ function Header() {
         style={{
           display: 'flex',
           flexDirection: 'column',
-          alignItems: 'center',
         }}
       >
         <ResponsiveAppBar />
@@ -23,7 +22,7 @@ function Header() {
           mb="8%"
         >
           <Box
-            gridColumn="span 8"
+            gridColumn="span 6"
             sx={{
               mt: '24%',
               ml: '30%',
@@ -53,10 +52,18 @@ function Header() {
               Get Started
             </Button>
           </Box>
-          <Box>
-            <ImageList sx={{ transform: 'translate(20%, 40%)' }}>
-              <img src={myImage} alt="hola" width="500px" />
-            </ImageList>
+          <Box
+            gridColumn="span 6"
+            sx={{
+              mt: '20%',
+              ml: '10%',
+            }}
+          >
+            <img
+              src={myImage}
+              alt="person drawing"
+              style={{ width: '100%', height: 'auto' }}
+            />
           </Box>
         </Box>
       </header>

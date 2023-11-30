@@ -18,6 +18,8 @@ const pages = ['Features', 'Pricing', 'Resources']
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
 
+  const [displayed, setDisplayed] = React.useState(false)
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -34,9 +36,17 @@ function ResponsiveAppBar() {
         backgroundColor: 'transparent',
         pt: 5,
         boxShadow: 'none',
+        width: '70%',
+        margin: 'auto',
       }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          display: 'flex',
+          justifyContent: 'space-around',
+          width: '100%',
+        }}
+      >
         <Typography
           variant="h4"
           component="a"
@@ -111,23 +121,25 @@ function ResponsiveAppBar() {
         </Typography>
 
         <Box sx={{ display: 'flex' }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{
-                mr: 5,
-                my: 2,
-                fontFamily: 'Poppins',
-                color: 'grey',
-                '&:hover': {
-                  color: 'black',
-                },
-              }}
-            >
-              {page}
-            </Button>
-          ))}
+          {anchorElNav !== null
+            ? ''
+            : pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    mr: 5,
+                    my: 2,
+                    fontFamily: 'Poppins',
+                    color: 'grey',
+                    '&:hover': {
+                      color: 'black',
+                    },
+                  }}
+                >
+                  {page}
+                </Button>
+              ))}
 
           <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button
