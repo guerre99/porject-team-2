@@ -1,39 +1,39 @@
-import * as React from "react";
-import "./styles.css";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Grid } from "@mui/material";
-import Container from "@mui/material/Container";
+import * as React from 'react'
+import './styles.css'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import IconButton from '@mui/material/IconButton'
+import Typography from '@mui/material/Typography'
+import Menu from '@mui/material/Menu'
+import MenuIcon from '@mui/icons-material/Menu'
+import { Grid } from '@mui/material'
+import Container from '@mui/material/Container'
+import Button from '@mui/material/Button'
 
+import MenuItem from '@mui/material/MenuItem'
 
-import MenuItem from "@mui/material/MenuItem";
-
-const pages = ["Features", "Pricing", "Resources"];
+const pages = ['Features', 'Pricing', 'Resources']
 
 function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElNav, setAnchorElNav] = React.useState(null)
 
   const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
+    setAnchorElNav(event.currentTarget)
+  }
 
   const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
+    setAnchorElNav(null)
+  }
 
   return (
     <AppBar
       position="static"
       component="nav"
       sx={{
-        backgroundColor: "transparent",
+        backgroundColor: 'transparent',
         pt: 5,
-        boxShadow: "none",
+        boxShadow: 'none',
       }}
     >
       <Toolbar>
@@ -42,10 +42,10 @@ function ResponsiveAppBar() {
           component="a"
           sx={{
             mr: 2,
-            fontFamily: "Poppins",
+            fontFamily: 'Poppins',
             fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
+            letterSpacing: '.3rem',
+            color: 'black',
           }}
         >
           Shortly
@@ -54,7 +54,7 @@ function ResponsiveAppBar() {
         <Box
           sx={{
             flexGrow: 1,
-            display: { xs: "flex", md: "none" },
+            display: { xs: 'flex', md: 'none' },
           }}
         >
           <IconButton
@@ -68,18 +68,18 @@ function ResponsiveAppBar() {
 
           <Menu
             id="menu-appbar"
-            style={{ width: "100%", justifyContent: "center" }}
+            style={{ width: '100%', justifyContent: 'center' }}
             anchorEl={anchorElNav}
             anchorOrigin={{
-              vertical: "bottom",
+              vertical: 'bottom',
 
-              horizontal: "right",
+              horizontal: 'right',
             }}
             keepMounted
             transformOrigin={{
-              vertical: "top",
+              vertical: 'top',
 
-              horizontal: "right",
+              horizontal: 'right',
             }}
             open={Boolean(anchorElNav)}
             onClose={handleCloseNavMenu}
@@ -98,19 +98,19 @@ function ResponsiveAppBar() {
           component="a"
           sx={{
             mr: 2,
-            display: { xs: "flex", md: "none" },
+            display: { xs: 'flex', md: 'none' },
             flexGrow: 1,
-            fontFamily: "Poppins",
+            fontFamily: 'Poppins',
             fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
-            textDecoration: "none",
+            letterSpacing: '.3rem',
+            color: 'black',
+            textDecoration: 'none',
           }}
         >
           Shortly
         </Typography>
 
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: 'flex' }}>
           {pages.map((page) => (
             <Button
               key={page}
@@ -118,10 +118,10 @@ function ResponsiveAppBar() {
               sx={{
                 mr: 5,
                 my: 2,
-                fontFamily: "Poppins",
-                color: "grey",
-                "&:hover": {
-                  color: "black",
+                fontFamily: 'Poppins',
+                color: 'grey',
+                '&:hover': {
+                  color: 'black',
                 },
               }}
             >
@@ -129,15 +129,15 @@ function ResponsiveAppBar() {
             </Button>
           ))}
 
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
             <Button
               sx={{
-                color: "gray",
-                "&:hover": {
-                  color: "black",
+                color: 'gray',
+                '&:hover': {
+                  color: 'black',
                 },
 
-                fontFamily: "Poppins",
+                fontFamily: 'Poppins',
               }}
             >
               Log In
@@ -145,17 +145,17 @@ function ResponsiveAppBar() {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#2BD0D0",
-                "&:hover": {
-                  background: "#bff0f0",
-                  boxShadow: "none",
+                backgroundColor: '#2BD0D0',
+                '&:hover': {
+                  background: '#bff0f0',
+                  boxShadow: 'none',
                 },
-                borderRadius: "30px",
+                borderRadius: '30px',
 
                 mt: 1,
-                fontFamily: "Poppins",
-                fontWeight: "bold",
-                boxShadow: "none",
+                fontFamily: 'Poppins',
+                fontWeight: 'bold',
+                boxShadow: 'none',
                 height: 50,
               }}
             >
@@ -165,6 +165,6 @@ function ResponsiveAppBar() {
         </Box>
       </Toolbar>
     </AppBar>
-  );
+  )
 }
-export default ResponsiveAppBar;
+export default ResponsiveAppBar
