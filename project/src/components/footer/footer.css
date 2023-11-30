@@ -8,17 +8,19 @@ a {
   transition: color 0.3s;
 }
 
-a:hover,
-.social-icon:hover {
+a:hover {
   color: #2bd0d0;
 }
 
 .social-icon {
+  margin: 0 10px;
   text-decoration: none;
-
-  transition: color 0.3s;
 }
 
-.social-icon:hover {
-  color: #2bd0d0;
+.social-icon:hover svg path {
+  fill: #2bd0d0;
+}
+
+.footer-list-item {
+  margin-bottom: 15px;
 }

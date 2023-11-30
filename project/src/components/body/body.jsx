@@ -74,19 +74,19 @@ function Body() {
   return (
     <>
       <Grid
-        component="main"
+        component='main'
         container
-        direction="column"
-        justifyContent="flex-start"
-        alignItems="center"
-        sx={{ backgroundColor: '#EFF1F7' }}
+        direction='column'
+        justifyContent='flex-start'
+        alignItems='center'
+        sx={{ backgroundColor: '#FFFFFF' }}
       >
         <Grid
-          component="form"
+          component='form'
           container
-          direction="row"
-          justifyContent="space-evenly"
-          alignItems="center"
+          direction='row'
+          justifyContent='space-evenly'
+          alignItems='center'
           width={'70%'}
           sx={{
             ml: '0',
@@ -99,7 +99,7 @@ function Body() {
           onSubmit={handleSubmit}
         >
           <TextField
-            id="outlined-basic"
+            id='outlined-basic'
             error={errorInput}
             label={
               !errorInput
@@ -108,7 +108,7 @@ function Body() {
                   : ''
                 : 'Please add a link...'
             }
-            variant="outlined"
+            variant='outlined'
             value={enlace.originalURL}
             onChange={(e) => {
               setEnlace({ ...enlace, originalURL: e.target.value })
@@ -124,7 +124,7 @@ function Body() {
             }}
           />
           <Button
-            variant="contained"
+            variant='contained'
             sx={{
               width: '20%',
               height: '100%',
@@ -133,7 +133,7 @@ function Body() {
                 backgroundColor: '#9AE3E3',
               },
             }}
-            type="submit"
+            type='submit'
           >
             Shorten It!
           </Button>
