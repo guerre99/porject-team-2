@@ -1,6 +1,6 @@
 import React from "react";
 
-import ResponsiveAppBar from "./navbar_responsive";
+import ResponsiveAppBar from "./navbar";
 import { Box, Button, ImageList, Grid } from "@mui/material";
 import myImage from "../../../../assets/illustration-working.svg";
 
