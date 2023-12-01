@@ -1,170 +1,85 @@
-import * as React from "react";
-import "./styles.css";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
+import StoreIcon from "@mui/icons-material/Store";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
-import { Grid } from "@mui/material";
-import Container from "@mui/material/Container";
-
-
+import { Box, Button } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Tooltip from "@mui/material/Tooltip";
+import IconButton from "@mui/material/IconButton";
 import MenuItem from "@mui/material/MenuItem";
+import Menu from "@mui/material/Menu";
 
-const pages = ["Features", "Pricing", "Resources"];
+function App() {
+  const my_pages = ["Solutions", "Products", "Pricing"];
+  const my_settings = ["Profile", "Account", "Logout"];
 
-function ResponsiveAppBar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = useState(null);
 
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
+  const handleOpenSettingsMenu = (event) => {
+    setAnchorElUser(event.currentTarget);
   };
 
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
+  const handleCloseSettingsMenu = () => {
+    setAnchorElUser(null);
   };
 
   return (
-    <AppBar
-      position="static"
-      component="nav"
-      sx={{
-        backgroundColor: "transparent",
-        pt: 5,
-        boxShadow: "none",
-      }}
-    >
+    <AppBar position="static">
       <Toolbar>
-        <Typography
-          variant="h4"
-          component="a"
-          sx={{
-            mr: 2,
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
-          }}
-        >
-          Shortly
-        </Typography>
-
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "flex", md: "none" },
-          }}
-        >
-          <IconButton
-            size="large"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-          >
-            <MenuIcon sx={{ pl: 10, pr: 10 }} />
-          </IconButton>
-
-          <Menu
-            id="menu-appbar"
-            style={{ width: "100%", justifyContent: "center" }}
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
-
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
-          >
-            {pages.map((page) => (
-              <MenuItem id="blockMenu" key={page} onClick={handleCloseNavMenu}>
-                <Typography>{page}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-
+        <StoreIcon></StoreIcon>
         <Typography
           variant="h5"
           noWrap
           component="a"
+          href="/"
           sx={{
             mr: 2,
-            display: { xs: "flex", md: "none" },
-            flexGrow: 1,
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
+            fontWeight: 200,
+            fontFamily: "roboto",
+            color: "white",
+            letterSpacing: ".2rem",
             textDecoration: "none",
           }}
         >
-          Shortly
+          Educative
         </Typography>
-
-        <Box sx={{ display: "flex" }}>
-          {pages.map((page) => (
+        <Box sx={{ flexWrap: "wrap", flexGrow: 1, display: "flex" }}>
+          {my_pages.map((page) => (
             <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{
-                mr: 5,
-                my: 2,
-                fontFamily: "Poppins",
-                color: "grey",
-                "&:hover": {
-                  color: "black",
-                },
-              }}
+              key={my_pages}
+              sx={{ my: 2, color: "white", display: "block" }}
             >
               {page}
             </Button>
           ))}
-
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-            <Button
-              sx={{
-                color: "gray",
-                "&:hover": {
-                  color: "black",
-                },
-
-                fontFamily: "Poppins",
-              }}
-            >
-              Log In
-            </Button>
-            <Button
-              variant="contained"
-              sx={{
-                backgroundColor: "#2BD0D0",
-                "&:hover": {
-                  background: "#bff0f0",
-                  boxShadow: "none",
-                },
-                borderRadius: "30px",
-
-                mt: 1,
-                fontFamily: "Poppins",
-                fontWeight: "bold",
-                boxShadow: "none",
-                height: 50,
-              }}
-            >
-              Sign Up
-            </Button>
-          </Box>
+        </Box>
+        <Box sx={{ flexGrow: 0 }}>
+          <Tooltip title="Open my_settings">
+            <IconButton onClick={handleOpenSettingsMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: "55px" }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: "top",
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseSettingsMenu}
+          >
+            {my_settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseSettingsMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
         </Box>
       </Toolbar>
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default App;
