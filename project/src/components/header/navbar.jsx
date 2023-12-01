@@ -1,85 +1,171 @@
-import React, { useState } from "react";
-import AppBar from "@mui/material/AppBar";
-import Toolbar from "@mui/material/Toolbar";
-import StoreIcon from "@mui/icons-material/Store";
-import Typography from "@mui/material/Typography";
-import { Box, Button } from "@mui/material";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import IconButton from "@mui/material/IconButton";
+import * as React from "react";
+import "./styles.css";
+
+import MenuIcon from "@mui/icons-material/Menu";
+import {
+  Button,
+  Toolbar,
+  Box,
+  AppBar,
+  IconButton,
+  Typography,
+  Menu,
+} from "@mui/material";
+
 import MenuItem from "@mui/material/MenuItem";
-import Menu from "@mui/material/Menu";
 
-function App() {
-  const my_pages = ["Solutions", "Products", "Pricing"];
-  const my_settings = ["Profile", "Account", "Logout"];
+const pages = ["Features", "Pricing", "Resources"];
 
-  const [anchorElUser, setAnchorElUser] = useState(null);
+function ResponsiveAppBar() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
 
-  const handleOpenSettingsMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
+  const handleOpenNavMenu = (event) => {
+    setAnchorElNav(event.currentTarget);
   };
 
-  const handleCloseSettingsMenu = () => {
-    setAnchorElUser(null);
+  const handleCloseNavMenu = () => {
+    setAnchorElNav(null);
   };
 
   return (
-    <AppBar position="static">
+    <AppBar
+      position="static"
+      component="nav"
+      sx={{
+        backgroundColor: "transparent",
+        pt: 5,
+        boxShadow: "none",
+      }}
+    >
       <Toolbar>
-        <StoreIcon></StoreIcon>
+        <Typography
+          variant="h4"
+          component="a"
+          sx={{
+            mr: 2,
+            fontFamily: "Poppins",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "black",
+          }}
+        >
+          Shortly
+        </Typography>
+
+        <Box
+          sx={{
+            flexGrow: 1,
+            display: { xs: "flex", md: "none" },
+          }}
+        >
+          <IconButton
+            size="large"
+            aria-controls="menu-appbar"
+            aria-haspopup="true"
+            onClick={handleOpenNavMenu}
+          >
+            <MenuIcon sx={{ pl: 10, pr: 10 }} />
+          </IconButton>
+
+          <Menu
+            id="menu-appbar"
+            style={{ width: "100%", justifyContent: "center" }}
+            anchorEl={anchorElNav}
+            anchorOrigin={{
+              vertical: "bottom",
+
+              horizontal: "right",
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: "top",
+
+              horizontal: "right",
+            }}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
+          >
+            {pages.map((page) => (
+              <MenuItem id="blockMenu" key={page} onClick={handleCloseNavMenu}>
+                <Typography>{page}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+
         <Typography
           variant="h5"
           noWrap
           component="a"
-          href="/"
           sx={{
             mr: 2,
-            fontWeight: 200,
-            fontFamily: "roboto",
-            color: "white",
-            letterSpacing: ".2rem",
+            display: { xs: "flex", md: "none" },
+            flexGrow: 1,
+            fontFamily: "Poppins",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "black",
             textDecoration: "none",
           }}
         >
-          Educative
+          Shortly
         </Typography>
-        <Box sx={{ flexWrap: "wrap", flexGrow: 1, display: "flex" }}>
-          {my_pages.map((page) => (
+
+        <Box sx={{ display: "flex" }}>
+          {pages.map((page) => (
             <Button
-              key={my_pages}
-              sx={{ my: 2, color: "white", display: "block" }}
+              key={page}
+              onClick={handleCloseNavMenu}
+              sx={{
+                mr: 5,
+                my: 2,
+                fontFamily: "Poppins",
+                color: "grey",
+                "&:hover": {
+                  color: "black",
+                },
+              }}
             >
               {page}
             </Button>
           ))}
-        </Box>
-        <Box sx={{ flexGrow: 0 }}>
-          <Tooltip title="Open my_settings">
-            <IconButton onClick={handleOpenSettingsMenu} sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
-            </IconButton>
-          </Tooltip>
-          <Menu
-            sx={{ mt: "55px" }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseSettingsMenu}
-          >
-            {my_settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseSettingsMenu}>
-                <Typography textAlign="center">{setting}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
+
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Button
+              sx={{
+                color: "gray",
+                "&:hover": {
+                  color: "black",
+                },
+
+                fontFamily: "Poppins",
+              }}
+            >
+              Log In
+            </Button>
+            <Button
+              variant="contained"
+              sx={{
+                backgroundColor: "#2BD0D0",
+                "&:hover": {
+                  background: "#bff0f0",
+                  boxShadow: "none",
+                },
+                borderRadius: "30px",
+
+                mt: 1,
+                fontFamily: "Poppins",
+                fontWeight: "bold",
+                boxShadow: "none",
+                height: 50,
+              }}
+            >
+              Sign Up
+            </Button>
+          </Box>
         </Box>
       </Toolbar>
     </AppBar>
   );
 }
-export default App;
+export default ResponsiveAppBar;
