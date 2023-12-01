@@ -1,16 +1,15 @@
 import * as React from "react";
 import "./styles.css";
-
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import {
-  Button,
-  Toolbar,
-  Box,
-  AppBar,
-  IconButton,
-  Typography,
-  Menu,
-} from "@mui/material";
+import { Grid } from "@mui/material";
+import Container from "@mui/material/Container";
+import Button from "@mui/material/Button";
 
 import MenuItem from "@mui/material/MenuItem";
 
@@ -35,9 +34,17 @@ function ResponsiveAppBar() {
         backgroundColor: "transparent",
         pt: 5,
         boxShadow: "none",
+        width: "70%",
+        margin: "auto",
       }}
     >
-      <Toolbar>
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-around",
+          width: "100%",
+        }}
+      >
         <Typography
           variant="h4"
           component="a"
@@ -112,23 +119,25 @@ function ResponsiveAppBar() {
         </Typography>
 
         <Box sx={{ display: "flex" }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleCloseNavMenu}
-              sx={{
-                mr: 5,
-                my: 2,
-                fontFamily: "Poppins",
-                color: "grey",
-                "&:hover": {
-                  color: "black",
-                },
-              }}
-            >
-              {page}
-            </Button>
-          ))}
+          {anchorElNav !== null
+            ? ""
+            : pages.map((page) => (
+                <Button
+                  key={page}
+                  onClick={handleCloseNavMenu}
+                  sx={{
+                    mr: 5,
+                    my: 2,
+                    fontFamily: "Poppins",
+                    color: "grey",
+                    "&:hover": {
+                      color: "black",
+                    },
+                  }}
+                >
+                  {page}
+                </Button>
+              ))}
 
           <Box sx={{ display: "flex", justifyContent: "space-between" }}>
             <Button

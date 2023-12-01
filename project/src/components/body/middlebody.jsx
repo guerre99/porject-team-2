@@ -9,14 +9,14 @@ function Middlebody() {
   return (
     <Grid
       container
-      direction='column'
-      alignItems='center'
-      justifyContent='center'
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
       sx={{ padding: '20px', textAlign: 'center', position: 'relative' }}
     >
-      <Grid item container justifyContent='center'>
+      <Grid item container justifyContent="center">
         <Typography
-          variant='h3'
+          variant="h3"
           sx={{ fontWeight: 700, color: '#34313D', textAlign: 'center' }}
         >
           Advanced Statistics
@@ -25,7 +25,7 @@ function Middlebody() {
       <Grid
         item
         container
-        justifyContent='center'
+        justifyContent="center"
         sx={{
           color: '#9E9AA8',
           padding: '0 16px',
@@ -34,7 +34,7 @@ function Middlebody() {
         }}
       >
         <Typography
-          variant='p'
+          variant="p"
           sx={{
             fontWeight: 500,
             fontSize: '16px',
@@ -52,7 +52,7 @@ function Middlebody() {
       <Grid
         container
         spacing={2}
-        justifyContent='center'
+        justifyContent="center"
         sx={{ marginTop: '20px', position: 'relative', zIndex: 2 }}
       >
         <Grid item xs={12} md={4}>
@@ -70,16 +70,16 @@ function Middlebody() {
               zIndex: 2,
             }}
           >
-            <Typography component='div'>
+            <Typography component="div">
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='88'
-                height='88'
-                viewBox='0 0 88 88'
-                fill='none'
+                xmlns="http://www.w3.org/2000/svg"
+                width="88"
+                height="88"
+                viewBox="0 0 88 88"
+                fill="none"
               >
-                <circle cx='44' cy='44' r='44' fill='#3A3054' />
-                <image href={icon1} x='20' y='20' width='48' height='48' />
+                <circle cx="44" cy="44" r="44" fill="#3A3054" />
+                <image href={icon1} x="20" y="20" width="48" height="48" />
               </svg>
               <h2>Brand Recognition</h2>
               <p style={{ color: '#9E9AA8' }}>
@@ -106,16 +106,16 @@ function Middlebody() {
               zIndex: 2,
             }}
           >
-            <Typography component='div'>
+            <Typography component="div">
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='88'
-                height='88'
-                viewBox='0 0 88 88'
-                fill='none'
+                xmlns="http://www.w3.org/2000/svg"
+                width="88"
+                height="88"
+                viewBox="0 0 88 88"
+                fill="none"
               >
-                <circle cx='44' cy='44' r='44' fill='#3A3054' />
-                <image href={icon2} x='20' y='20' width='48' height='48' />
+                <circle cx="44" cy="44" r="44" fill="#3A3054" />
+                <image href={icon2} x="20" y="20" width="48" height="48" />
               </svg>
               <h2>Detailed Records</h2>
               <p style={{ color: '#9E9AA8' }}>
@@ -143,16 +143,16 @@ function Middlebody() {
               zIndex: 2,
             }}
           >
-            <Typography component='div'>
+            <Typography component="div">
               <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='88'
-                height='88'
-                viewBox='0 0 88 88'
-                fill='none'
+                xmlns="http://www.w3.org/2000/svg"
+                width="88"
+                height="88"
+                viewBox="0 0 88 88"
+                fill="none"
               >
-                <circle cx='44' cy='44' r='44' fill='#3A3054' />
-                <image href={icon3} x='20' y='20' width='48' height='48' />
+                <circle cx="44" cy="44" r="44" fill="#3A3054" />
+                <image href={icon3} x="20" y="20" width="48" height="48" />
               </svg>
               <h2>Fully Customizable</h2>
               <p style={{ color: '#9E9AA8' }}>
@@ -165,9 +165,9 @@ function Middlebody() {
       </Grid>
 
       <Box
-        component='img'
+        component="img"
         src={barra}
-        alt='Rectangle'
+        alt="Rectangle"
         sx={{
           width: '80%',
           position: 'absolute',
@@ -175,7 +175,7 @@ function Middlebody() {
           zIndex: 1,
           transform: 'rotate(0deg)',
           transformOrigin: 'center',
-          '@media (max-width: 600px)': {
+          '@media (max-width: 900px)': {
             transform: 'rotate(0deg)',
             width: '8px',
             height: '60%',
