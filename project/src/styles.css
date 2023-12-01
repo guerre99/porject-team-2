@@ -1,4 +1,8 @@
-html {
-  font-size: 18px;
-  font-family: 'Poppins', sans-serif;
+#blockMenu1,
+#blockMenu2,
+#blockMenu3 {
+  background-color: #3a3054;
+  width: 40rem;
+  height: 8rem;
+  color: white;
 }

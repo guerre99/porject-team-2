@@ -1,4 +1,4 @@
-import { Grid, Button } from '@mui/material'
+import { Grid, Button, Typography } from '@mui/material'
 import React, { useState } from 'react'
 
 function Card({ originalURL, shortURL }) {
@@ -18,35 +18,39 @@ function Card({ originalURL, shortURL }) {
     <>
       <Grid
         container
-        direction='row'
-        justifyContent='space-around'
-        alignItems='center'
+        direction="row"
+        justifyContent="space-around"
+        alignItems="center"
         sx={{
           width: '70%',
           mx: 'auto',
           my: '2%',
           backgroundColor: 'white',
+          borderRadius: '10px',
         }}
       >
         <Grid
           container
-          direction='row'
-          justifyContent='space-between'
-          alignItems='center'
+          direction="row"
+          justifyContent="space-between"
+          alignItems="center"
           sx={{
             width: '70%',
             wordBreak: 'break-all',
           }}
         >
-          <p>{originalURL}</p>
-          <p style={{ color: '#2BD0D0' }}>{shortURL}</p>
+          <Typography noWrap sx={{ width: '50%', fontFamily: 'Poppins' }}>
+            {originalURL}
+          </Typography>
+          <Typography style={{ color: '#2BD0D0' }}>{shortURL}</Typography>
         </Grid>
         <Button
-          variant='contained'
+          variant="contained"
           onClick={() => copiarAlPortapapeles(shortURL)}
           sx={{
             width: '20%',
             height: '100%',
+            my: '2%',
             backgroundColor: copied ? '#4B3F6B' : '#2BD0D0',
             '&:hover': {
               backgroundColor: copied ? '#4B3F6B' : '#2BD0D0', // problemas con el color del hover por default, asi que implemento este color
