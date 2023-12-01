@@ -9,7 +9,7 @@ function Card({ originalURL, shortURL }) {
       .writeText(textToCopy)
       .then(() => {
         setCopied(true)
-        setTimeout(() => setCopied(false), 200)
+        setTimeout(() => setCopied(false), 300)
       })
       .catch((err) => console.error('Error copying to clipboard:', err))
   }
