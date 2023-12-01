@@ -46,8 +46,10 @@ function ResponsiveAppBar() {
         }}
       >
         <Typography
-          variant="h4"
+          variant="h5"
+          noWrap
           component="a"
+          href="/"
           sx={{
             mr: 2,
             fontFamily: 'Poppins',
@@ -56,7 +58,7 @@ function ResponsiveAppBar() {
             color: 'black',
           }}
         >
-          Shortly
+          Educative
         </Typography>
 
         <Box
@@ -75,6 +77,7 @@ function ResponsiveAppBar() {
           </IconButton>
 
           <Menu
+            sx={{ mt: "55px" }}
             id="menu-appbar"
             style={{ width: '100%', justifyContent: 'center' }}
             anchorEl={anchorElNav}
@@ -89,12 +92,12 @@ function ResponsiveAppBar() {
 
               horizontal: 'right',
             }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseSettingsMenu}
           >
-            {pages.map((page) => (
-              <MenuItem id="blockMenu" key={page} onClick={handleCloseNavMenu}>
-                <Typography>{page}</Typography>
+            {my_settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseSettingsMenu}>
+                <Typography textAlign="center">{setting}</Typography>
               </MenuItem>
             ))}
           </Menu>
