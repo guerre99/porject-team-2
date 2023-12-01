@@ -9,7 +9,7 @@ import Body from './components/body/body'
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Body />
       <Footer />
     </>
