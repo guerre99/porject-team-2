@@ -1,16 +1,16 @@
-import React from 'react'
+import React from "react";
 
-import ResponsiveAppBar from './navbar'
-import { Box, Button, ImageList, Grid } from '@mui/material'
-import myImage from '../../../../assets/illustration-working.svg'
+import ResponsiveAppBar from "./navbar";
+import { Box, Button, ImageList, Grid } from "@mui/material";
+import myImage from "../../../../assets/illustration-working.svg";
 
 function Header() {
   return (
     <>
       <header
         style={{
-          display: 'flex',
-          flexDirection: 'column',
+          display: "flex",
+          flexDirection: "column",
         }}
       >
         <ResponsiveAppBar />
@@ -55,14 +55,14 @@ function Header() {
           <Box
             gridColumn="span 6"
             sx={{
-              mt: '20%',
-              ml: '10%',
+              mt: "20%",
+              ml: "10%",
             }}
           >
             <img
               src={myImage}
               alt="person drawing"
-              style={{ width: '100%', height: 'auto' }}
+              style={{ width: "100%", height: "auto" }}
             />
           </Box>
         </Box>

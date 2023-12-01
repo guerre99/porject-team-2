@@ -1,5 +1,4 @@
 import * as React from "react";
-import "./styles.css";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,8 +6,8 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Grid } from "@mui/material";
 import Container from "@mui/material/Container";
+import "./styles.css";
 import Button from "@mui/material/Button";
 
 import MenuItem from "@mui/material/MenuItem";
@@ -29,120 +28,198 @@ function ResponsiveAppBar() {
   return (
     <AppBar
       position="static"
-      component="nav"
       sx={{
         backgroundColor: "transparent",
+
         pt: 5,
+
         boxShadow: "none",
+
         width: "70%",
+
         margin: "auto",
       }}
     >
-      <Toolbar
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-          width: "100%",
-        }}
-      >
-        <Typography
-          variant="h4"
-          component="a"
-          sx={{
-            mr: 2,
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
-          }}
-        >
-          Shortly
-        </Typography>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <Typography
+            variant="h4"
+            component="a"
+            sx={{
+              mr: 2,
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "flex", md: "none" },
-          }}
-        >
-          <IconButton
-            size="large"
-            aria-controls="menu-appbar"
-            aria-haspopup="true"
-            onClick={handleOpenNavMenu}
-          >
-            <MenuIcon sx={{ pl: 10, pr: 10 }} />
-          </IconButton>
+              fontFamily: "Poppins",
 
-          <Menu
-            id="menu-appbar"
-            style={{ width: "100%", justifyContent: "center" }}
-            anchorEl={anchorElNav}
-            anchorOrigin={{
-              vertical: "bottom",
+              fontWeight: 700,
 
-              horizontal: "right",
+              letterSpacing: ".3rem",
+
+              color: "black",
             }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElNav)}
-            onClose={handleCloseNavMenu}
           >
-            {pages.map((page) => (
-              <MenuItem id="blockMenu" key={page} onClick={handleCloseNavMenu}>
-                <Typography>{page}</Typography>
-              </MenuItem>
-            ))}
-          </Menu>
-        </Box>
-
-        <Typography
-          variant="h5"
-          noWrap
-          component="a"
-          sx={{
-            mr: 2,
-            display: { xs: "flex", md: "none" },
-            flexGrow: 1,
-            fontFamily: "Poppins",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "black",
-            textDecoration: "none",
-          }}
-        >
-          Shortly
-        </Typography>
-
-        <Box sx={{ display: "flex" }}>
-          {anchorElNav !== null
-            ? ""
-            : pages.map((page) => (
-                <Button
-                  key={page}
-                  onClick={handleCloseNavMenu}
+            Shortly
+          </Typography>
+          <Box
+            sx={{
+              flexGrow: 1,
+              ml: "50%",
+              display: { xs: "flex", md: "flex", lg: "flex", xl: "none" },
+            }}
+          >
+            <IconButton
+              size="large"
+              aria-label="account of current user"
+              aria-controls="menu-appbar"
+              aria-haspopup="true"
+              onClick={handleOpenNavMenu}
+              color="black"
+            >
+              <MenuIcon />
+            </IconButton>
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElNav}
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "center",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "center",
+              }}
+              open={Boolean(anchorElNav)}
+              onClose={handleCloseNavMenu}
+              sx={{
+                display: { xs: "flex", md: "flex", lg: "flex", xl: "none" },
+              }}
+            >
+              {pages.map((page) => (
+                <MenuItem
                   sx={{
-                    mr: 5,
-                    my: 2,
-                    fontFamily: "Poppins",
-                    color: "grey",
+                    backgroundColor: "#3a3054",
                     "&:hover": {
-                      color: "black",
+                      background: "#3a3054",
+
+                      boxShadow: "none",
                     },
                   }}
+                  className="blockMenu"
+                  key={page}
+                  onClick={handleCloseNavMenu}
                 >
-                  {page}
-                </Button>
+                  <Typography
+                    width="100%"
+                    align="center"
+                    sx={{
+                      fontFamily: "Poppins",
+                      fontWeight: 700,
+                      color: "white",
+                    }}
+                  >
+                    {page}
+                  </Typography>
+                </MenuItem>
               ))}
 
-          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+              <MenuItem
+                sx={{
+                  backgroundColor: "#3a3054",
+                  "&:hover": {
+                    background: "#3a3054",
+
+                    boxShadow: "none",
+                  },
+                }}
+                className="blockMenu"
+                onClick={handleCloseNavMenu}
+              >
+                <Typography
+                  width="100%"
+                  align="center"
+                  sx={{
+                    borderTop: "1px solid black",
+                    fontFamily: "Poppins",
+                    fontWeight: 700,
+                    color: "white",
+                  }}
+                >
+                  LogIn
+                </Typography>
+              </MenuItem>
+              <MenuItem
+                sx={{
+                  backgroundColor: "#3a3054",
+                  "&:hover": {
+                    background: "#3a3054",
+
+                    boxShadow: "none",
+                  },
+                }}
+                className="blockMenu"
+                onClick={handleCloseNavMenu}
+              >
+                <Button
+                  variant="contained"
+                  sx={{
+                    backgroundColor: "#2BD0D0",
+                    "&:hover": {
+                      background: "#bff0f0",
+                      boxShadow: "none",
+                    },
+                    borderRadius: "30px",
+                    fontFamily: "Poppins",
+                    fontWeight: "bold",
+                    boxShadow: "none",
+                    width: "15rem",
+                    margin: "auto",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </MenuItem>
+            </Menu>
+          </Box>
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "none", lg: "none", xl: "flex" },
+            }}
+          >
+            {pages.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{
+                  mr: 5,
+
+                  my: 2,
+
+                  fontFamily: "Poppins",
+
+                  color: "grey",
+
+                  "&:hover": {
+                    color: "black",
+                  },
+                }}
+              >
+                {page}
+              </Button>
+            ))}
+          </Box>
+
+          <Box
+            sx={{
+              flexGrow: 1,
+              display: { xs: "none", md: "none", lg: "none", xl: "flex" },
+              justifyContent: "space-evenly",
+            }}
+          >
             <Button
               sx={{
                 color: "gray",
+
                 "&:hover": {
                   color: "black",
                 },
@@ -152,28 +229,36 @@ function ResponsiveAppBar() {
             >
               Log In
             </Button>
+
             <Button
               variant="contained"
               sx={{
                 backgroundColor: "#2BD0D0",
+
                 "&:hover": {
                   background: "#bff0f0",
+
                   boxShadow: "none",
                 },
+
                 borderRadius: "30px",
 
                 mt: 1,
+
                 fontFamily: "Poppins",
+
                 fontWeight: "bold",
+
                 boxShadow: "none",
+
                 height: 50,
               }}
             >
               Sign Up
             </Button>
           </Box>
-        </Box>
-      </Toolbar>
+        </Toolbar>
+      </Container>
     </AppBar>
   );
 }
