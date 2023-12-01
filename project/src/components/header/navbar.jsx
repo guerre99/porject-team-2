@@ -18,8 +18,6 @@ const pages = ['Features', 'Pricing', 'Resources']
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
 
-  const [displayed, setDisplayed] = React.useState(false)
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
