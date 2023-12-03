@@ -18,6 +18,8 @@ const pages = ['Features', 'Pricing', 'Resources']
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
 
+  const [displayed, setDisplayed] = React.useState(false)
+
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -46,10 +48,8 @@ function ResponsiveAppBar() {
         }}
       >
         <Typography
-          variant="h5"
-          noWrap
+          variant="h4"
           component="a"
-          href="/"
           sx={{
             mr: 2,
             fontFamily: 'Poppins',
@@ -58,7 +58,7 @@ function ResponsiveAppBar() {
             color: 'black',
           }}
         >
-          Educative
+          Shortly
         </Typography>
 
         <Box
@@ -77,7 +77,6 @@ function ResponsiveAppBar() {
           </IconButton>
 
           <Menu
-            sx={{ mt: "55px" }}
             id="menu-appbar"
             style={{ width: '100%', justifyContent: 'center' }}
             anchorEl={anchorElNav}
@@ -92,12 +91,12 @@ function ResponsiveAppBar() {
 
               horizontal: 'right',
             }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseSettingsMenu}
+            open={Boolean(anchorElNav)}
+            onClose={handleCloseNavMenu}
           >
-            {my_settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseSettingsMenu}>
-                <Typography textAlign="center">{setting}</Typography>
+            {pages.map((page) => (
+              <MenuItem id="blockMenu" key={page} onClick={handleCloseNavMenu}>
+                <Typography>{page}</Typography>
               </MenuItem>
             ))}
           </Menu>
