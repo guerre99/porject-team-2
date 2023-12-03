@@ -4,6 +4,7 @@ import ResponsiveAppBar from "./navbar";
 import { Box, Button } from "@mui/material";
 import myImage from "../../../../assets/illustration-working.svg";
 
+
 function Header() {
   return (
     <>
@@ -19,8 +20,8 @@ function Header() {
           <Box
             gridColumn="span 6"
             sx={{
-              mt: "24%",
-              ml: "30%",
+              mt: '24%',
+              ml: '30%',
             }}
           >
             <h1>More than just shorter links</h1>
@@ -31,17 +32,17 @@ function Header() {
             <Button
               variant="contained"
               sx={{
-                backgroundColor: "#2BD0D0",
-                "&:hover": {
-                  background: "#bff0f0",
-                  boxShadow: "none",
+                backgroundColor: '#2BD0D0',
+                '&:hover': {
+                  background: '#bff0f0',
+                  boxShadow: 'none',
                 },
-                borderRadius: "30px",
-                padding: "10px 20px",
-                mr: "18%",
-                fontFamily: "Poppins",
-                fontWeight: "bold",
-                boxShadow: "none",
+                borderRadius: '30px',
+                padding: '10px 20px',
+                mr: '18%',
+                fontFamily: 'Poppins',
+                fontWeight: 'bold',
+                boxShadow: 'none',
               }}
             >
               Get Started
@@ -57,7 +58,7 @@ function Header() {
         </Box>
       </header>
     </>
-  );
+  )
 }
 
-export default Header;
+export default Header
