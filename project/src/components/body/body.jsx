@@ -79,7 +79,7 @@ function Body() {
         direction='column'
         justifyContent='flex-start'
         alignItems='center'
-        sx={{ backgroundColor: 'blue' }}
+        sx={{ backgroundColor: '#EFF1F7' }}
       >
         <Grid
           component='form'
