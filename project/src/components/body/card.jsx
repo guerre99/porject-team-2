@@ -34,8 +34,6 @@ function Card({ originalURL, shortURL }) {
     return width
   }
 
-  console.log(textAlign)
-
   return (
     <>
       <Grid

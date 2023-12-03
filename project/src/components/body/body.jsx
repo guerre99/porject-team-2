@@ -29,7 +29,6 @@ function Body() {
         }
       )
       .then(({ data }) => {
-        console.log(data)
         setGeneratedLink(
           data.links.map((item) => ({
             id: item.id,
