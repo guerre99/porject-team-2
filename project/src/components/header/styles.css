@@ -5,3 +5,24 @@
   height: 5rem;
   color: white;
 }
+
+.responsive-image {
+  width: 70%;
+  height: auto;
+  display: block; /* Asegura que la imagen se muestre como un bloque */
+  margin-left: 2rem;
+  margin-right: auto;
+  margin-top: 4rem;
+}
+
+.image-container {
+  position: relative;
+  z-index: 1;
+  /* Ajusta según sea necesario para superponer la imagen */
+}
+
+@media (max-width: 768px) {
+  .responsive-image {
+    max-width: 100%;
+  }
+}

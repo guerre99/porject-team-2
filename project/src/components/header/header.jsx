@@ -1,7 +1,7 @@
 import React from "react";
-
+import "./styles.css";
 import ResponsiveAppBar from "./navbar";
-import { Box, Button, ImageList, Grid } from "@mui/material";
+import { Box, Button } from "@mui/material";
 import myImage from "../../../../assets/illustration-working.svg";
 
 function Header() {
@@ -15,12 +15,7 @@ function Header() {
       >
         <ResponsiveAppBar />
 
-        <Box
-          display="grid"
-          gridTemplateColumns="repeat(12, 1fr)"
-          gap={5}
-          mb="8%"
-        >
+        <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" mb="8%">
           <Box
             gridColumn="span 6"
             sx={{
@@ -52,17 +47,11 @@ function Header() {
               Get Started
             </Button>
           </Box>
-          <Box
-            gridColumn="span 6"
-            sx={{
-              mt: "20%",
-              ml: "10%",
-            }}
-          >
+          <Box gridColumn="span 6" className="image-container">
             <img
               src={myImage}
               alt="person drawing"
-              style={{ width: "100%", height: "auto" }}
+              className="responsive-image"
             />
           </Box>
         </Box>

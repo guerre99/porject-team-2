@@ -121,6 +121,18 @@ function ResponsiveAppBar() {
                   </Typography>
                 </MenuItem>
               ))}
+              <MenuItem
+                sx={{
+                  borderTop: "1px solid black",
+
+                  backgroundColor: "#3a3054",
+                  "&:hover": {
+                    background: "#3a3054",
+
+                    boxShadow: "none",
+                  },
+                }}
+              ></MenuItem>
 
               <MenuItem
                 sx={{
@@ -138,7 +150,6 @@ function ResponsiveAppBar() {
                   width="100%"
                   align="center"
                   sx={{
-                    borderTop: "1px solid black",
                     fontFamily: "Poppins",
                     fontWeight: 700,
                     color: "white",
