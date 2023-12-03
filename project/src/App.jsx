@@ -1,19 +1,19 @@
-import './styles.css'
+import "./styles.css";
 
-import './components/footer/footer.css'
-import Header from './components/header/header'
-import Footer from './components/footer/footer'
+import "./components/footer/footer.css";
+import Header from "./components/header/header";
+import Footer from "./components/footer/footer";
 
-import Body from './components/body/body'
+import Body from "./components/body/body";
 
 function App() {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <Body />
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
