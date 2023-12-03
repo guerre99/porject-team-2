@@ -35,6 +35,23 @@ function Footer() {
                 transform: 'translate(-50%, -50%)',
                 width: '100%',
               }}
+              style={{
+                weight: 700,
+                fontSize: '40px',
+                lineHeight: '48px',
+                letter: '-1',
+                alignItems: 'center',
+                '@media (maxWidth: 500px)': {
+                  transform: 'rotate(0deg)',
+                  weight: '700',
+                  width: '303px',
+                  height: '48px',
+                  left: '1px',
+                  alignContent: 'center',
+                  fontSize: '28px',
+                  lineHeight: '48px',
+                },
+              }}
             >
               Boost your links today
             </Typography>

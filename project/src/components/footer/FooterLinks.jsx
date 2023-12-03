@@ -104,6 +104,8 @@ function FooterLinks() {
           position: 'relative',
           display: 'flex',
           marginY: '20px',
+          marginBottom: '200px',
+          '@media (max-width: 500px)': {},
         }}
       >
         <a href='#' className='social-icon'>
