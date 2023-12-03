@@ -1,5 +1,5 @@
 import { Grid, Button, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Card({ originalURL, shortURL }) {
   const [copied, setCopied] = useState(false)
@@ -14,12 +14,36 @@ function Card({ originalURL, shortURL }) {
       .catch((err) => console.error('Error copying to clipboard:', err))
   }
 
+  const [textAlign, setTextAlign] = useState('left')
+
+  const useScreenSize = () => {
+    const [width, setWidth] = useState(window.innerWidth)
+
+    useEffect(() => {
+      window.addEventListener('resize', handleResize)
+
+      return () => {
+        window.removeEventListener('resize', handleResize)
+      }
+    }, [])
+
+    const handleResize = () => {
+      setWidth(window.innerWidth)
+      setTextAlign(window.innerWidth < 900 ? 'center' : 'left')
+    }
+    return width
+  }
+
+  console.log(textAlign)
+
   return (
     <>
       <Grid
         container
-        direction="row"
-        justifyContent="space-around"
+        direction={useScreenSize() > 900 ? 'row' : 'column'}
+        justifyContent={
+          useScreenSize() > 900 ? 'space-around' : 'space-between'
+        }
         alignItems="center"
         sx={{
           width: '70%',
@@ -31,7 +55,7 @@ function Card({ originalURL, shortURL }) {
       >
         <Grid
           container
-          direction="row"
+          direction={useScreenSize() > 900 ? 'row' : 'column'}
           justifyContent="space-between"
           alignItems="center"
           sx={{
@@ -39,7 +63,10 @@ function Card({ originalURL, shortURL }) {
             wordBreak: 'break-all',
           }}
         >
-          <Typography noWrap sx={{ width: '50%', fontFamily: 'Poppins' }}>
+          <Typography
+            noWrap
+            sx={{ width: '60%', fontFamily: 'Poppins', textAlign, py: '1%' }}
+          >
             {originalURL}
           </Typography>
           <Typography style={{ color: '#2BD0D0' }}>{shortURL}</Typography>
